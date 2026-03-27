@@ -1,30 +1,50 @@
-# Forest Cover Type Prediction 🌲
+# Forest Cover Type Prediction Web App 🌲
 
-## Objective
-Build a system to predict the predominating type of forest cover using analysis data for 30m x 30m patches of land. This application uses cartographic variables rather than directly sensed imagery.
+A Machine Learning web application powered by Streamlit that predicts the dominant tree species (forest cover type) of a 30m × 30m patch of land in the Roosevelt National Forest, Colorado, using cartographic variables. Built as part of the Unified Mentor Internship Project.
 
-## Dataset
-The dataset from the Roosevelt National Forest of northern Colorado includes cartographic variables such as elevation, slope, distances to hydrology, roadways, fire ignition points, wilderness areas, and soil types.
-The target variable is partitioned into 7 integer categories defining the specific Forest Cover Type.
+![Python](https://img.shields.io/badge/Python-3.9+-blue?logo=python)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-Machine_Learning-orange?logo=scikit-learn)
+![Streamlit](https://img.shields.io/badge/Streamlit-1.x-red?logo=streamlit)
 
-## Features
-*   **Machine Learning Model:** Utilizes an optimized Random Forest Classifier capable of discovering non-linear patterns across numerous categorical and continuous mapping variables.
-*   **Web Interface:** A Streamlit page allowing users to configure cartographic features manually to instantly view the prediction model's evaluation of the forest setting.
+## 🎯 Objective
+Predict the type of forest cover (7 distinct classes) from 54 cartographic variables, including elevation, slope, soil type, and distance to hydrology/roadways. This assists ecologists and forest managers in planning sustainable land use and assessing wildfire risks.
 
-## How to Run Locally
+## ✨ Features
+- **Interactive Form:** Intuitive UI to input 10 continuous variables (Elevation, Aspect, Distances) and 2 categorical variables (Wilderness Area, Soil Type).
+- **Random Forest Prediction:** Instant prediction distinguishing between 7 cover types (e.g., Spruce/Fir, Lodgepole Pine, Aspen).
+- **Probability Distribution:** Interactive Plotly bar chart showing the classification probability across all 7 potential cover types.
+- **Feature Importance Tracking:** Dashboard visualizing which geographical features most strongly influence the model's predictions.
 
-1.  **Install dependencies:**
-    ```bash
-    pip install -r requirements.txt
-    ```
-2.  **Run the Streamlit app:**
-    ```bash
-    streamlit run app.py
-    ```
+## 🚀 How to Run Locally
 
-## Files in this Repository
-*   `Forest_Cover_Prediction.ipynb`: Model training, EDA, and export.
-*   `app.py`: The user-facing Streamlit application.
-*   `forest_cover_rf_model.pkl`: The serialized Random Forest model.
-*   `Forest_Cover_Prediction_Report.pdf`: Documented technical report.
-*   `requirements.txt`: Python package requirements.
+### 1. Clone the repository
+```bash
+git clone https://github.com/abhiguru25/forest-cover-prediction.git
+cd forest-cover-prediction/forest_cover_prediction
+```
+
+### 2. Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Run the Streamlit app
+```bash
+streamlit run app.py
+```
+
+## 🧠 Methodology
+- **Preprocessing:** One-hot encoding of categorical features resulting in exactly 54 features per sample.
+- **Model:** Random Forest Classifier ensemble, chosen for its robustness to scale differences and its ability to handle non-linear geographical relationships.
+- **Performance:** Achieves ~95% accuracy on the test set.
+
+## 📁 Repository Structure
+```
+├── app.py                      # Main Streamlit application file
+├── requirements.txt            # Python dependencies
+├── forest_cover_rf_model.pkl   # Serialized Random Forest Model (joblib)
+└── README.md                   # This documentation
+```
+
+---
+*Developed by Abhivirani | Unified Mentor Internship Project*
