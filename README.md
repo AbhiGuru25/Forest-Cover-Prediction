@@ -1,5 +1,7 @@
 # Forest Cover Type Prediction Web App 🌲
 
+**🌐 Live Demo:** [http://forest-cover-prediction-webum.streamlit.app/](http://forest-cover-prediction-webum.streamlit.app/)
+
 A Machine Learning web application powered by Streamlit that predicts the dominant tree species (forest cover type) of a 30m × 30m patch of land in the Roosevelt National Forest, Colorado, using cartographic variables. Built as part of the Unified Mentor Internship Project.
 
 ![Python](https://img.shields.io/badge/Python-3.9+-blue?logo=python)
